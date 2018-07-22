@@ -1,0 +1,14 @@
+
+<section>
+    <div class="message-box">
+        <ul>
+            {% if data %}
+                {% for obj in data %}
+                        <li class="notice">
+                            <a href="/find/{{obj.id}}">{{obj.name}}</a>
+                        </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</section>

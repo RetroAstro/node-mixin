@@ -1,0 +1,24 @@
+{% extends "views/base.html" %}
+{% block main %}
+<main>
+    <ul>
+        {% if data %}
+           {% for obj in data %}
+              {% for m_obj in obj.messages %}
+                    <li class="message">
+                        <form action="/edit/{{obj.name}}/{{m_obj.id}}" method="POST">
+                            <div class="m-header">
+                                <div class="editor">edit</div>
+                                <div class="username">{{obj.name}}</div>
+                                <a href="/delete/{{obj.name}}/{{m_obj.id}}"class="close"></a>
+                            </div>
+                            <textarea class="m-content disabled" maxlength="220" name="message" placeholder="no message  :(">{{m_obj.message}}</textarea>
+                            <button class="finish" type="submit">finish</button>
+                        </form>
+                    </li>
+              {% endfor %}
+           {% endfor %}
+        {% endif %}
+    </ul>
+</main>
+{% endblock %}

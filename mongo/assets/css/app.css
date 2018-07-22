@@ -1,0 +1,310 @@
+:root {
+    --primary:#00d1b2;
+    --link: #3273dc;
+    --info: #209cee;
+    --success: #23d160;
+    --warning: #ffdd57;
+    --danger: #ff3860;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+ul, li {
+    list-style: none;
+}
+textarea {
+    outline: none;
+    border: none;
+    resize: none;
+}
+html, body {
+    position: relative;
+}
+.grey {
+    background: rgba(0,0,0,.3);
+}
+.disabled {
+    pointer-events: none;
+    cursor: none;
+}
+.container {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 0 10vw;
+}
+.container header {
+    width: 100%;
+    padding-top: 2vw;
+    height: 28vw;
+    position: relative;
+}
+.container header .warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: .6s ease-in-out;
+    opacity: 0;
+    white-space: nowrap;
+}
+.container header .warning.active {
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 1.3vw;
+    opacity: .6;
+    color: var(--danger);
+}
+.container header .flex-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container header p {
+    width: 100%;
+    text-align: center;
+    font-size: 2vw;
+
+    color: #ffafc9;
+}
+.container header .m-box {
+    width: 36vw;
+    height: 13vw;
+    padding: 1vw 2vw;
+    box-shadow: 0 2px 10px 0 #e3e7f6;
+    border-radius: 8px;
+    font-size: 1.3vw;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+.container header .m-box:focus {
+    box-shadow: 0 0 12px rgba(81, 203, 238, .8);
+}
+.container header .c-box {
+    width: 36vw;
+    height: 5vw;
+    padding: 1.5vw .5vw 0 .5vw;
+    display: flex;
+    justify-content: space-between;
+}
+.container header .c-box .search {
+    width: 12vw;
+    height: 2.5vw;
+    text-align: center;
+    line-height: 2.5vw;
+    border-radius: 6px;
+    font-size: 1.1vw;
+    background: var(--info);
+    color: #fff;
+    cursor: pointer;
+}
+.container header .c-box .confirm {
+    width: 6vw;
+    height: 2.5vw;
+    opacity: .8;
+    text-align: center;
+    line-height: 2.5vw;
+}
+.container header .c-box .confirm button {
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 6px;
+    font-size: 1.1vw;
+    color: #fff;
+    outline: none;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+}
+.container header .name-box {
+    outline: none;
+    padding: .5vw 1vw;
+    margin: 1vw 0 1.5vw;
+    width: 10vw;
+    height: 3vw;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px 0 #e3e7f6;
+    font-size: 1.1vw;
+    opacity: .5;
+    text-align: center;
+    transition: all .5s ease-in-out;
+}
+.container header .name-box:focus {
+    box-shadow: 0 0 20px rgba(81, 203, 238, 1);
+}
+.container header .abso {
+    position: relative;
+}
+.container main {
+    width: 100%;
+    text-align: center;
+    margin-top: 1vw;
+}
+.container main ul {
+    width: 36vw;
+    display: inline-block;
+}
+.container main .message {
+    width: 100%;
+    height: 17vw;
+    border-radius: 6px;
+    color: #4a4a4a;
+    font-size: 1.2vw;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2vw;
+}
+.container main .message .m-header {
+    height: 3vw;
+    background: var(--warning);
+    opacity: .8;
+    padding: .5vw 1vw;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.container main .message .m-header .editor {
+    cursor: pointer;
+}
+.container main .message .m-header .username {
+    letter-spacing: 1px;
+}
+.container main .message .m-header .close {
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+.container main .message .m-header .close::after {
+    background-color: #fff;
+    content: "";
+    display: block;
+    height: 70%;
+    width: 2px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform-origin: center center;
+}
+.container main .message .m-header .close::before {
+    background-color: #fff;
+    content: "";
+    display: block;
+    width: 70%;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform-origin: center center;
+}
+.container main .message .m-content {
+    width: 100%;
+    height: 14vw;
+    padding: 1vw 2vw;
+    background: #fffdf5;
+    font-size: 1.3vw;
+    text-overflow:ellipsis;
+    white-space: pre-wrap;
+}
+.container main .message .finish {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 5vw;
+    z-index: 5;
+    height: 2.5vw;
+    line-height: 2.5vw;
+    border-radius: 6px;
+    text-align: center;
+    background: var(--success);
+    color: #fff;
+    cursor: pointer;
+    transform: translateX(5vw);
+    transition: all .6s ease-in-out;
+    opacity: 0;
+    border: none;
+    outline: none;
+}
+.container main .message .finish.active {
+    transform: translateX(0);
+    opacity: 0.8;
+}
+section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    background: rgba(0,0,0,.3);
+    color: #fff;
+    font-size: 1.6vw;
+}
+section .message-box {
+    width: 60vw;
+    visibility: hidden;
+    transform: scale(0);
+    transition: all .3s ease-in-out; 
+}
+section.active {
+    visibility: visible;
+}
+section.active .message-box{
+    visibility: visible;
+    transform: scale(1);
+}
+section .message-box ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+section .message-box .notice {
+    width: 16vw;
+    height: 4vw;
+    text-align: center;
+    line-height: 4vw;
+    border-radius: 6px;
+    animation: rainbow 8s ease infinite;
+    background-image: linear-gradient(124deg,#ff3860,#ffafc9,#b86bff,#3273dc);
+    background-size: 800% 800%;
+    color: #fff;
+    margin-bottom: 2vw;
+    font-size: 1.6vw;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+}
+section .message-box .notice a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+section .message-box .notice:nth-child(even) {
+    animation: rainbow 8s ease infinite reverse;
+}
+@keyframes rainbow {
+    0% {
+        background-position: 1% 80%;
+    }
+    50% {
+        background-position: 99% 20%;
+    }
+    100% {
+        background-position: 1% 80%;
+    }
+}
